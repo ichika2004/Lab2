@@ -1,0 +1,210 @@
+<style>
+.lx-highlight { position: relative; border-radius:3px; padding:1px 2px;}
+.lx-highlight .lx-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  background: #333;
+  color: #fff;
+  text-align: left;
+  border-radius: 4px;
+  padding: 6px 8px;
+  position: absolute;
+  z-index: 1000;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  max-width: 240px;
+  white-space: normal;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+.lx-highlight:hover .lx-tooltip { visibility: visible; opacity:1; }
+.lx-animated-wrapper { max-width: 100%; font-family: Arial, sans-serif; }
+.lx-controls {
+  background: #fafafa; border: 1px solid #90caf9; border-radius: 8px;
+  padding: 12px; margin-bottom: 16px;
+}
+.lx-button-row {
+  display: flex; justify-content: center; gap: 8px; margin-bottom: 12px;
+}
+.lx-control-btn {
+  background: #4285f4; color: white; border: none; border-radius: 4px;
+  padding: 8px 16px; cursor: pointer; font-size: 13px; font-weight: 500;
+  transition: background-color 0.2s;
+}
+.lx-control-btn:hover { background: #3367d6; }
+.lx-progress-container {
+  margin-bottom: 8px;
+}
+.lx-progress-slider {
+  width: 100%; margin: 0; appearance: none; height: 6px;
+  background: #ddd; border-radius: 3px; outline: none;
+}
+.lx-progress-slider::-webkit-slider-thumb {
+  appearance: none; width: 18px; height: 18px; background: #4285f4;
+  border-radius: 50%; cursor: pointer;
+}
+.lx-progress-slider::-moz-range-thumb {
+  width: 18px; height: 18px; background: #4285f4; border-radius: 50%;
+  cursor: pointer; border: none;
+}
+.lx-status-text {
+  text-align: center; font-size: 12px; color: #666; margin-top: 4px;
+}
+.lx-text-window {
+  font-family: monospace; white-space: pre-wrap; border: 1px solid #90caf9;
+  padding: 12px; max-height: 260px; overflow-y: auto; margin-bottom: 12px;
+  line-height: 1.6;
+}
+.lx-attributes-panel {
+  background: #fafafa; border: 1px solid #90caf9; border-radius: 6px;
+  padding: 8px 10px; margin-top: 8px; font-size: 13px;
+}
+.lx-current-highlight {
+  border-bottom: 4px solid #ff4444;
+  font-weight: bold;
+  animation: lx-pulse 1s ease-in-out;
+}
+@keyframes lx-pulse {
+  0% { text-decoration-color: #ff4444; }
+  50% { text-decoration-color: #ff0000; }
+  100% { text-decoration-color: #ff4444; }
+}
+.lx-legend {
+  font-size: 12px; margin-bottom: 8px;
+  padding-bottom: 8px; border-bottom: 1px solid #e0e0e0;
+}
+.lx-label {
+  display: inline-block;
+  padding: 2px 4px;
+  border-radius: 3px;
+  margin-right: 4px;
+  color: #000;
+}
+.lx-attr-key {
+  font-weight: 600;
+  color: #1565c0;
+  letter-spacing: 0.3px;
+}
+.lx-attr-value {
+  font-weight: 400;
+  opacity: 0.85;
+  letter-spacing: 0.2px;
+}
+
+/* Add optimizations with larger fonts and better readability for GIFs */
+.lx-gif-optimized .lx-text-window { font-size: 16px; line-height: 1.8; }
+.lx-gif-optimized .lx-attributes-panel { font-size: 15px; }
+.lx-gif-optimized .lx-current-highlight { text-decoration-thickness: 4px; }
+</style>
+    <div class="lx-animated-wrapper lx-gif-optimized">
+      <div class="lx-attributes-panel">
+        <div class="lx-legend">Highlights Legend: <span class="lx-label" style="background-color:#D2E3FC;">opinion_statement</span></div>
+        <div id="attributesContainer"></div>
+      </div>
+      <div class="lx-text-window" id="textWindow">
+        **Page 1**
+&quot;&quot;&quot;
+Christopher Nolan&#x27;s &quot;The Dark Knight&quot; is <span class="lx-highlight lx-current-highlight" data-idx="0" style="background-color:#D2E3FC;">a haunted film</span> that leaps beyond its
+origins and <span class="lx-highlight" data-idx="1" style="background-color:#D2E3FC;">becomes an engrossing tragedy</span>. It <span class="lx-highlight" data-idx="2" style="background-color:#D2E3FC;">creates characters we come to care
+about</span>. That&#x27;s because of the performances, of course. <span class="lx-highlight" data-idx="3" style="background-color:#D2E3FC;">Heath Ledger&#x27;s Joker is a
+screen presence so powerful that he takes over the movie</span>.
+&quot;The Dark Knight&quot; is <span class="lx-highlight" data-idx="4" style="background-color:#D2E3FC;">not a simplistic tale of good and evil</span>. Batman is good,
+yes, The Joker is evil, yes. But Batman <span class="lx-highlight" data-idx="5" style="background-color:#D2E3FC;">poses a more complex puzzle than usual</span>:
+<span class="lx-highlight" data-idx="6" style="background-color:#D2E3FC;">The</span> citizens of Gotham City are in an uproar, calling him a vigilante and
+blaming him for the deaths of policemen and others. And the Joker is more than a
+villain. He is a Mephistopheles whose actions are fiendishly designed to pose
+moral dilemmas for his enemies.
+<span class="lx-highlight" data-idx="7" style="background-color:#D2E3FC;">The special effects are extraordinary</span>. They focus on the expected explosions and
+catastrophes, and <span class="lx-highlight" data-idx="8" style="background-color:#D2E3FC;">have some superb, elaborate chase scenes</span>. The movie was shot
+on location in Chicago, but it avoids such familiar landmarks as Marina City,
+the Wrigley Building or the skyline.
+<span class="lx-highlight" data-idx="9" style="background-color:#D2E3FC;">It is a film that understands the allure of darkness</span>, sees how it can
+efficiently spread, and then presents us with the facts regarding the realities
+of honor, strength, and influence.
+&quot;&quot;&quot;
+
+
+      </div>
+      <div class="lx-controls">
+        <div class="lx-button-row">
+          <button class="lx-control-btn" onclick="playPause()">▶️ Play</button>
+          <button class="lx-control-btn" onclick="prevExtraction()">⏮ Previous</button>
+          <button class="lx-control-btn" onclick="nextExtraction()">⏭ Next</button>
+        </div>
+        <div class="lx-progress-container">
+          <input type="range" id="progressSlider" class="lx-progress-slider"
+                 min="0" max="9" value="0"
+                 onchange="jumpToExtraction(this.value)">
+        </div>
+        <div class="lx-status-text">
+          Entity <span id="entityInfo">1/10</span> |
+          Pos <span id="posInfo">[56-70]</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function() {
+        const extractions = [{"index": 0, "class": "opinion_statement", "text": "a haunted film", "color": "#D2E3FC", "startPos": 56, "endPos": 70, "beforeText": "**Page 1**\n&quot;&quot;&quot;\nChristopher Nolan&#x27;s &quot;The Dark Knight&quot; is ", "extractionText": "a haunted film", "afterText": " that leaps beyond its\norigins and becomes an engrossing tragedy. It creates characters we come to care\nabout. That&#x27;s because of the performances, of ", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The Dark Knight</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">haunted</span>}</div>"}, {"index": 1, "class": "opinion_statement", "text": "becomes an engrossing tragedy", "color": "#D2E3FC", "startPos": 105, "endPos": 134, "beforeText": "**Page 1**\n&quot;&quot;&quot;\nChristopher Nolan&#x27;s &quot;The Dark Knight&quot; is a haunted film that leaps beyond its\norigins and ", "extractionText": "becomes an engrossing tragedy", "afterText": ". It creates characters we come to care\nabout. That&#x27;s because of the performances, of course. Heath Ledger&#x27;s Joker is a\nscreen presence so powerful th", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The Dark Knight</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">engrossing tragedy</span>}</div>"}, {"index": 2, "class": "opinion_statement", "text": "creates characters we come to care about", "color": "#D2E3FC", "startPos": 139, "endPos": 179, "beforeText": "**Page 1**\n&quot;&quot;&quot;\nChristopher Nolan&#x27;s &quot;The Dark Knight&quot; is a haunted film that leaps beyond its\norigins and becomes an engrossing tragedy. It ", "extractionText": "creates characters we come to care\nabout", "afterText": ". That&#x27;s because of the performances, of course. Heath Ledger&#x27;s Joker is a\nscreen presence so powerful that he takes over the movie.\n&quot;The Dark Knight&quot;", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The Dark Knight</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">come to care about</span>}</div>"}, {"index": 3, "class": "opinion_statement", "text": "Heath Ledger's Joker is a screen presence so powerful that he takes over the movie", "color": "#D2E3FC", "startPos": 228, "endPos": 310, "beforeText": "aps beyond its\norigins and becomes an engrossing tragedy. It creates characters we come to care\nabout. That&#x27;s because of the performances, of course. ", "extractionText": "Heath Ledger&#x27;s Joker is a\nscreen presence so powerful that he takes over the movie", "afterText": ".\n&quot;The Dark Knight&quot; is not a simplistic tale of good and evil. Batman is good,\nyes, The Joker is evil, yes. But Batman poses a more complex puzzle tha", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Heath Ledger&#x27;s Joker</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">so powerful that he takes over the movie</span>}</div>"}, {"index": 4, "class": "opinion_statement", "text": "not a simplistic tale of good and evil", "color": "#D2E3FC", "startPos": 333, "endPos": 371, "beforeText": "at&#x27;s because of the performances, of course. Heath Ledger&#x27;s Joker is a\nscreen presence so powerful that he takes over the movie.\n&quot;The Dark Knight&quot; is ", "extractionText": "not a simplistic tale of good and evil", "afterText": ". Batman is good,\nyes, The Joker is evil, yes. But Batman poses a more complex puzzle than usual:\nThe citizens of Gotham City are in an uproar, callin", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The Dark Knight</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">not a simplistic tale</span>}</div>"}, {"index": 5, "class": "opinion_statement", "text": "poses a more complex puzzle than usual", "color": "#D2E3FC", "startPos": 429, "endPos": 467, "beforeText": "ul that he takes over the movie.\n&quot;The Dark Knight&quot; is not a simplistic tale of good and evil. Batman is good,\nyes, The Joker is evil, yes. But Batman ", "extractionText": "poses a more complex puzzle than usual", "afterText": ":\nThe citizens of Gotham City are in an uproar, calling him a vigilante and\nblaming him for the deaths of policemen and others. And the Joker is more ", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Batman</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">more complex puzzle</span>}</div>"}, {"index": 6, "class": "opinion_statement", "text": "the actions are fiendishly designed to pose moral dilemmas for his enemies", "color": "#D2E3FC", "startPos": 469, "endPos": 472, "beforeText": "rk Knight&quot; is not a simplistic tale of good and evil. Batman is good,\nyes, The Joker is evil, yes. But Batman poses a more complex puzzle than usual:\n", "extractionText": "The", "afterText": " citizens of Gotham City are in an uproar, calling him a vigilante and\nblaming him for the deaths of policemen and others. And the Joker is more than ", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The Joker&#x27;s actions</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">fiendishly designed to pose moral dilemmas</span>}</div>"}, {"index": 7, "class": "opinion_statement", "text": "The special effects are extraordinary", "color": "#D2E3FC", "startPos": 734, "endPos": 771, "beforeText": "nd others. And the Joker is more than a\nvillain. He is a Mephistopheles whose actions are fiendishly designed to pose\nmoral dilemmas for his enemies.\n", "extractionText": "The special effects are extraordinary", "afterText": ". They focus on the expected explosions and\ncatastrophes, and have some superb, elaborate chase scenes. The movie was shot\non location in Chicago, but", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The special effects</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">extraordinary</span>}</div>"}, {"index": 8, "class": "opinion_statement", "text": "have some superb, elaborate chase scenes", "color": "#D2E3FC", "startPos": 833, "endPos": 873, "beforeText": "y designed to pose\nmoral dilemmas for his enemies.\nThe special effects are extraordinary. They focus on the expected explosions and\ncatastrophes, and ", "extractionText": "have some superb, elaborate chase scenes", "afterText": ". The movie was shot\non location in Chicago, but it avoids such familiar landmarks as Marina City,\nthe Wrigley Building or the skyline.\nIt is a film t", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The chase scenes</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">superb, elaborate</span>}</div>"}, {"index": 9, "class": "opinion_statement", "text": "It is a film that understands the allure of darkness", "color": "#D2E3FC", "startPos": 1009, "endPos": 1061, "beforeText": "e chase scenes. The movie was shot\non location in Chicago, but it avoids such familiar landmarks as Marina City,\nthe Wrigley Building or the skyline.\n", "extractionText": "It is a film that understands the allure of darkness", "afterText": ", sees how it can\nefficiently spread, and then presents us with the facts regarding the realities\nof honor, strength, and influence.\n&quot;&quot;&quot;\n\n", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The Dark Knight</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">understands the allure of darkness</span>}</div>"}];
+        let currentIndex = 0;
+        let isPlaying = false;
+        let animationInterval = null;
+        let animationSpeed = 1.0;
+
+        function updateDisplay() {
+          const extraction = extractions[currentIndex];
+          if (!extraction) return;
+
+          document.getElementById('attributesContainer').innerHTML = extraction.attributesHtml;
+          document.getElementById('entityInfo').textContent = (currentIndex + 1) + '/' + extractions.length;
+          document.getElementById('posInfo').textContent = '[' + extraction.startPos + '-' + extraction.endPos + ']';
+          document.getElementById('progressSlider').value = currentIndex;
+
+          const playBtn = document.querySelector('.lx-control-btn');
+          if (playBtn) playBtn.textContent = isPlaying ? '⏸ Pause' : '▶️ Play';
+
+          const prevHighlight = document.querySelector('.lx-text-window .lx-current-highlight');
+          if (prevHighlight) prevHighlight.classList.remove('lx-current-highlight');
+          const currentSpan = document.querySelector('.lx-text-window span[data-idx="' + currentIndex + '"]');
+          if (currentSpan) {
+            currentSpan.classList.add('lx-current-highlight');
+            currentSpan.scrollIntoView({block: 'center', behavior: 'smooth'});
+          }
+        }
+
+        function nextExtraction() {
+          currentIndex = (currentIndex + 1) % extractions.length;
+          updateDisplay();
+        }
+
+        function prevExtraction() {
+          currentIndex = (currentIndex - 1 + extractions.length) % extractions.length;
+          updateDisplay();
+        }
+
+        function jumpToExtraction(index) {
+          currentIndex = parseInt(index);
+          updateDisplay();
+        }
+
+        function playPause() {
+          if (isPlaying) {
+            clearInterval(animationInterval);
+            isPlaying = false;
+          } else {
+            animationInterval = setInterval(nextExtraction, animationSpeed * 1000);
+            isPlaying = true;
+          }
+          updateDisplay();
+        }
+
+        window.playPause = playPause;
+        window.nextExtraction = nextExtraction;
+        window.prevExtraction = prevExtraction;
+        window.jumpToExtraction = jumpToExtraction;
+
+        updateDisplay();
+      })();
+    </script>
